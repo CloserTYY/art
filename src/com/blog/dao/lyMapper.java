@@ -1,0 +1,13 @@
+package com.blog.dao;
+
+import com.blog.model.Ly;
+
+import java.util.List;
+
+public interface lyMapper {
+    //≤È’“»´≤ø¡Ù—‘
+    List<Ly> selectly(int id);
+    //–¥¡Ù—‘
+    void writely(Ly ly);
+
+}

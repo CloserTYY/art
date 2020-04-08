@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.lyMapper">
+    <!-- 自定义结果集 -->
+    <resultMap type="com.blog.model.Ly"  id="lyResultMap">
+        <id property="id" column="id" />
+        <result property="ly" column="ly" />
+        <result property="time" column="time" />
+        <result property="name" column="name" />
+
+        <!--         <collection property="ly" ofType="com.blog.model.Ly">-->
+        <!--             <id column="id" property="id"/>-->
+        <!--             <result column="name" property="name"/>-->
+        <!--             <result column="ly" property="ly"/>-->
+        <!--             <result column="time" property="time"/>-->
+        <!--         </collection>-->
+    </resultMap>
+
+
+    <select id="selectly" parameterType="com.blog.model.Ly" resultMap="lyResultMap" >
+     SELECT ly.ly,ly.name,ly.time from blog RIGHT JOIN ly on ly.id=blog.blogid WHERE blog.blogid=#{blogid}
+
+    </select>
+    <insert id="writely" parameterType="com.blog.model.Ly"  useGeneratedKeys="true"  keyProperty="id">
+   insert into ly (id,ly,time,name)
+    values (#{id},#{ly},#{time},#{name})
+
+
+    </insert>
+
+
+
+</mapper>
+

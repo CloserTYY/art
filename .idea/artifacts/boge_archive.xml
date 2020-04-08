@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="boge archive">
+    <output-path>$PROJECT_DIR$/classes/artifacts/boge_archive</output-path>
+    <root id="archive" name="boge archive.war">
+      <element id="artifact" artifact-name="boge" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
